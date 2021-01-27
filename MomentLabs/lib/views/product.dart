@@ -1,6 +1,7 @@
 import 'package:MomentLabs/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:MomentLabs/views/utils/product_carousel.dart';
+import 'preupload.dart';
 
 class ProductScreen extends StatelessWidget {
   @override
@@ -26,10 +27,24 @@ class CarouselPrincipal extends StatelessWidget {
       key: _scaffoldKey,
       //appBar: AppBar(title: Text('Carousel with indicator demo')),
       body: SafeArea(
-        bottom: false,
-        child: Column(
+        child: ListView(
           children: [
-            CarouselWithIndicatorDemo(imgList: imgList),
+            Stack(
+              children: [
+                CarouselWithIndicatorDemo(imgList: imgList),
+                InkWell(
+                  //TODO: parece estar sacando Shader Compilation Errror
+                  borderRadius:
+                      BorderRadius.circular(AppBar().preferredSize.height),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
             Container(
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.only(left: 20.0),
@@ -112,14 +127,35 @@ class CarouselPrincipal extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Expanded(child: ExpansionTile(title: Text('Detalles del producto')))
+            ClipRect(
+              child: ExpansionTile(
+                title: Text('Detalles del producto'),
+                children: [
+                  Text(
+                    """
+ •Dimensiones : cuadrado de 20,5 x 20,5 cm
+ •Impresión de alta calidad
+ •Incluye papel premium mate
+ •Desde 13 hasta 50 fotos
+ •Hasta 32 páginas
+""",
+                    overflow: TextOverflow.clip,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(8.0),
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PreUploadInfo()),
+            );
+          },
           color: Colors.pink[300],
           textColor: Colors.white,
           shape: RoundedRectangleBorder(
