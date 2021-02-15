@@ -1,8 +1,16 @@
 import 'package:MomentLabs/views/upload.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-class PreUploadInfo extends StatelessWidget {
+class PreUploadInfo extends StatefulWidget {
   const PreUploadInfo({Key key}) : super(key: key);
+
+  @override
+  _PreUploadInfoState createState() => _PreUploadInfoState();
+}
+
+class _PreUploadInfoState extends State<PreUploadInfo> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,12 +89,14 @@ class PreUploadInfo extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: EdgeInsets.all(8.0),
           child: RaisedButton(
-            onPressed: () {
+            onPressed: openCamera
+            /*() {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => UploadPicture()),
               );
-            },
+            },*/
+            ,
             color: Colors.teal,
             textColor: Colors.white,
             shape: RoundedRectangleBorder(
@@ -100,5 +110,22 @@ class PreUploadInfo extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<File> openCamera() async {
+    File _image;
+    final picker = ImagePicker();
+
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    //print('PickedFile: ${pickedFile.toString()}');
+    print('PickedFile path: ${pickedFile.path.toString()}');
+
+    setState(() {
+      _image = File(pickedFile.path);
+    });
+    if (_image != null) {
+      return _image;
+    }
+    return null;
   }
 }

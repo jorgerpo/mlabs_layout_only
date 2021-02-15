@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:MomentLabs/views/login.dart';
+//import 'package:MomentLabs/views/login.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:MomentLabs/main.dart';
 
 //void main() => runApp(App());

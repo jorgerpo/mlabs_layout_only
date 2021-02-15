@@ -1,4 +1,3 @@
-import 'package:MomentLabs/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:MomentLabs/views/utils/product_carousel.dart';
 import 'preupload.dart';
