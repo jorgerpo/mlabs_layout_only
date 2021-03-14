@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "177367647789",
+    "firebase_url": "https://mlabs-082020.firebaseio.com",
+    "project_id": "mlabs-082020",
+    "storage_bucket": "mlabs-082020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177367647789:android:c5e3cbcace7735e919daa4",
+        "android_client_info": {
+          "package_name": "com.example.Mlabs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177367647789-qq6bpkd0kjtrvtia395kahbk3uqnrd03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Mlabs",
+            "certificate_hash": "693cef479fd9f0ec74910fdbcb8f2d138d0aca59"
+          }
+        },
+        {
+          "client_id": "177367647789-4ota40fk80m8ssptbki17boltaiu65cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGkEOK9r8t_bB02RECauTQX9LTYIKJFDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177367647789-4ota40fk80m8ssptbki17boltaiu65cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
